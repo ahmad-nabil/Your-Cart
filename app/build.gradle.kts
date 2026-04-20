@@ -8,7 +8,11 @@ plugins {
 android {
     namespace = "com.ejabi.yourcart"
     compileSdk = 36
-
+    packaging {
+        resources {
+            excludes += "/META-INF/versions/9/OSGI-INF/MANIFEST.MF"
+        }
+    }
     defaultConfig {
         applicationId = "com.ejabi.yourcart"
         minSdk = 26
@@ -34,10 +38,10 @@ android {
         targetCompatibility = JavaVersion.VERSION_17
     }
 
-    kotlinOptions {
-        jvmTarget = "17"
-    }
 
+    kotlin {
+        jvmToolchain(17)
+    }
     buildFeatures {
         viewBinding = true
     }
