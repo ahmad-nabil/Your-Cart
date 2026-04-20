@@ -3,13 +3,16 @@ package com.ejabi.yourcart
 import android.app.Dialog
 import android.os.Bundle
 import android.widget.HorizontalScrollView
+import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.ejabi.domain.model.Category
 import com.ejabi.domain.model.Product
 import com.ejabi.yourcart.adabter.ProductAdapter
 import com.ejabi.yourcart.adabter.ProductImageAdapter
@@ -39,6 +42,7 @@ class MainActivity : AppCompatActivity() {
         observeData()
 
         viewModel.loadProducts()
+        viewModel.loadCategory()
     }
 
     private fun setupRecycler() {
@@ -47,7 +51,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.recyclerView.apply {
-            layoutManager = LinearLayoutManager(this@MainActivity, RecyclerView.HORIZONTAL, false)
+            layoutManager = GridLayoutManager(this@MainActivity, 2)
             adapter = productAdapter
         }
     }
@@ -59,6 +63,9 @@ class MainActivity : AppCompatActivity() {
 
         viewModel.error.observe(this) {
             Toast.makeText(this, it, Toast.LENGTH_SHORT).show()
+        }
+        viewModel.categories.observe(this) {
+            setupTabs(it)
         }
     }
 
@@ -76,5 +83,36 @@ class MainActivity : AppCompatActivity() {
         dialogBinding.viewPagerImages.adapter = ProductImageAdapter(product.images)
 
         dialog.show()
+    }
+    private fun setupTabs(categories: List<Category>) {
+        binding.tabLayout.removeAllTabs()
+        val tab = binding.tabLayout.newTab()
+
+        tab.text = "All"
+        tab.tag = "ALL"
+        binding.tabLayout.addTab(tab)
+        categories.forEach { category ->
+            val tab = binding.tabLayout.newTab()
+            tab.text = category.name
+            tab.tag = category.slug
+            binding.tabLayout.addTab(tab)
+        }
+
+
+        binding.tabLayout.addOnTabSelectedListener(object :
+            com.google.android.material.tabs.TabLayout.OnTabSelectedListener {
+
+            override fun onTabSelected(tab: com.google.android.material.tabs.TabLayout.Tab?) {
+                val slug = tab?.tag as? String ?: return
+                if (slug == "ALL") {
+                    viewModel.loadProducts()
+                } else{
+                    viewModel.loadProductsByCategory(slug)
+                }
+            }
+
+            override fun onTabUnselected(tab: com.google.android.material.tabs.TabLayout.Tab?) {}
+            override fun onTabReselected(tab: com.google.android.material.tabs.TabLayout.Tab?) {}
+        })
     }
 }

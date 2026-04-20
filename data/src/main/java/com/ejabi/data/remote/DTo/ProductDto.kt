@@ -1,4 +1,4 @@
-package com.ejabi.data.remote.dto
+package com.ejabi.data.remote.DTo
 
 data class ProductDto(
     val id: Int,
