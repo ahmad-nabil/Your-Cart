@@ -21,4 +21,6 @@ dependencyResolutionManagement {
 
 rootProject.name = "your Cart"
 include(":app")
- 
+include(":domain")
+include(":data")
+include(":core")
