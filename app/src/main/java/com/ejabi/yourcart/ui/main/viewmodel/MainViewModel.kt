@@ -1,4 +1,4 @@
-package com.ejabi.yourcart.ui.MAIN
+package com.ejabi.yourcart.ui.main.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

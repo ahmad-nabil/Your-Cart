@@ -1,24 +1,22 @@
-package com.ejabi.yourcart
+package com.ejabi.yourcart.ui.main
 
 import android.app.Dialog
 import android.os.Bundle
-import android.widget.HorizontalScrollView
-import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.ejabi.domain.model.Category
 import com.ejabi.domain.model.Product
+import com.ejabi.yourcart.R
 import com.ejabi.yourcart.adabter.ProductAdapter
 import com.ejabi.yourcart.adabter.ProductImageAdapter
 import com.ejabi.yourcart.databinding.ActivityMainBinding
 import com.ejabi.yourcart.databinding.DialogProductDetailsBinding
-import com.ejabi.yourcart.ui.MAIN.MainViewModel
+import com.ejabi.yourcart.ui.main.viewmodel.MainViewModel
+import com.google.android.material.tabs.TabLayout
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -100,9 +98,9 @@ class MainActivity : AppCompatActivity() {
 
 
         binding.tabLayout.addOnTabSelectedListener(object :
-            com.google.android.material.tabs.TabLayout.OnTabSelectedListener {
+            TabLayout.OnTabSelectedListener {
 
-            override fun onTabSelected(tab: com.google.android.material.tabs.TabLayout.Tab?) {
+            override fun onTabSelected(tab: TabLayout.Tab?) {
                 val slug = tab?.tag as? String ?: return
                 if (slug == "ALL") {
                     viewModel.loadProducts()
@@ -111,8 +109,8 @@ class MainActivity : AppCompatActivity() {
                 }
             }
 
-            override fun onTabUnselected(tab: com.google.android.material.tabs.TabLayout.Tab?) {}
-            override fun onTabReselected(tab: com.google.android.material.tabs.TabLayout.Tab?) {}
+            override fun onTabUnselected(tab: TabLayout.Tab?) {}
+            override fun onTabReselected(tab: TabLayout.Tab?) {}
         })
     }
 }

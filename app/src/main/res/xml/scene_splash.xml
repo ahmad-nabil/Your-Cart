@@ -1,0 +1,674 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ConstraintSet android:id="@+id/start">
+        <Constraint android:id="@+id/gradient_bg">
+            <PropertySet android:alpha="0" />
+        </Constraint>
+        <Constraint android:id="@+id/arc_top">
+            <PropertySet android:alpha="0" />
+            <Transform
+                android:rotation="-90"
+                android:translationX="-200dp"
+                android:translationY="-200dp" />
+        </Constraint>
+        <Constraint android:id="@+id/arc_bottom">
+            <PropertySet android:alpha="0" />
+            <Transform
+                android:rotation="90"
+                android:translationX="200dp"
+                android:translationY="200dp" />
+        </Constraint>
+
+        <Constraint android:id="@+id/dot1">
+            <PropertySet android:alpha="0" />
+            <Transform
+                android:scaleX="0"
+                android:scaleY="0" />
+        </Constraint>
+        <Constraint android:id="@+id/dot2">
+            <PropertySet android:alpha="0" />
+            <Transform
+                android:scaleX="0"
+                android:scaleY="0" />
+        </Constraint>
+        <Constraint android:id="@+id/dot3">
+            <PropertySet android:alpha="0" />
+            <Transform
+                android:scaleX="0"
+                android:scaleY="0" />
+        </Constraint>
+        <Constraint android:id="@+id/dot4">
+            <PropertySet android:alpha="0" />
+            <Transform
+                android:scaleX="0"
+                android:scaleY="0" />
+        </Constraint>
+        <Constraint android:id="@+id/dot5">
+            <PropertySet android:alpha="0" />
+            <Transform
+                android:scaleX="0"
+                android:scaleY="0" />
+        </Constraint>
+        <Constraint android:id="@+id/dot6">
+            <PropertySet android:alpha="0" />
+            <Transform
+                android:scaleX="0"
+                android:scaleY="0" />
+        </Constraint>
+
+        <Constraint android:id="@+id/glow_ring">
+            <PropertySet android:alpha="0" />
+            <Transform
+                android:scaleX="0.2"
+                android:scaleY="0.2" />
+        </Constraint>
+        <Constraint android:id="@+id/logo">
+            <PropertySet android:alpha="0" />
+            <Transform
+                android:rotation="-180"
+                android:scaleX="0"
+                android:scaleY="0" />
+            <Layout
+                android:layout_marginBottom="80dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </Constraint>
+        <Constraint android:id="@+id/tv_app_name">
+            <PropertySet android:alpha="0" />
+            <Transform android:translationY="50dp" />
+        </Constraint>
+        <Constraint android:id="@+id/tv_tagline">
+            <PropertySet android:alpha="0" />
+            <Transform android:translationY="40dp" />
+        </Constraint>
+        <Constraint android:id="@+id/divider">
+            <PropertySet android:alpha="0" />
+            <Transform android:scaleX="0" />
+        </Constraint>
+        <Constraint android:id="@+id/btn_shop_now">
+            <PropertySet android:alpha="0" />
+            <Transform
+                android:scaleX="0.8"
+                android:scaleY="0.8"
+                android:translationY="80dp" />
+            <Layout
+                android:layout_marginBottom="100dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+        </Constraint>
+        <Constraint android:id="@+id/tv_version">
+            <PropertySet android:alpha="0" />
+            <Transform android:translationY="20dp" />
+        </Constraint>
+    </ConstraintSet>
+    <ConstraintSet android:id="@+id/end">
+        <Constraint android:id="@+id/gradient_bg">
+            <PropertySet android:alpha="1" />
+        </Constraint>
+        <Constraint android:id="@+id/arc_top">
+            <PropertySet android:alpha="0.35" />
+            <Transform
+                android:rotation="0"
+                android:translationX="0dp"
+                android:translationY="0dp" />
+        </Constraint>
+        <Constraint android:id="@+id/arc_bottom">
+            <PropertySet android:alpha="0.25" />
+            <Transform
+                android:rotation="0"
+                android:translationX="0dp"
+                android:translationY="0dp" />
+        </Constraint>
+
+        <Constraint android:id="@+id/dot1">
+            <PropertySet android:alpha="0.9" />
+            <Transform
+                android:scaleX="1"
+                android:scaleY="1" />
+        </Constraint>
+        <Constraint android:id="@+id/dot2">
+            <PropertySet android:alpha="0.7" />
+            <Transform
+                android:scaleX="1"
+                android:scaleY="1" />
+        </Constraint>
+        <Constraint android:id="@+id/dot3">
+            <PropertySet android:alpha="0.8" />
+            <Transform
+                android:scaleX="1"
+                android:scaleY="1" />
+        </Constraint>
+        <Constraint android:id="@+id/dot4">
+            <PropertySet android:alpha="0.6" />
+            <Transform
+                android:scaleX="1"
+                android:scaleY="1" />
+        </Constraint>
+        <Constraint android:id="@+id/dot5">
+            <PropertySet android:alpha="0.75" />
+            <Transform
+                android:scaleX="1"
+                android:scaleY="1" />
+        </Constraint>
+        <Constraint android:id="@+id/dot6">
+            <PropertySet android:alpha="0.85" />
+            <Transform
+                android:scaleX="1"
+                android:scaleY="1" />
+        </Constraint>
+
+        <Constraint android:id="@+id/glow_ring">
+            <PropertySet android:alpha="0.6" />
+            <Transform
+                android:scaleX="1"
+                android:scaleY="1" />
+        </Constraint>
+        <Constraint android:id="@+id/logo">
+            <PropertySet android:alpha="1" />
+            <Transform
+                android:rotation="0"
+                android:scaleX="1"
+                android:scaleY="1" />
+            <Layout
+                android:layout_marginBottom="80dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </Constraint>
+        <Constraint android:id="@+id/tv_app_name">
+            <PropertySet android:alpha="1" />
+            <Transform android:translationY="0dp" />
+        </Constraint>
+        <Constraint android:id="@+id/tv_tagline">
+            <PropertySet android:alpha="1" />
+            <Transform android:translationY="0dp" />
+        </Constraint>
+        <Constraint android:id="@+id/divider">
+            <PropertySet android:alpha="1" />
+            <Transform android:scaleX="1" />
+        </Constraint>
+        <Constraint android:id="@+id/btn_shop_now">
+            <PropertySet android:alpha="1" />
+            <Transform
+                android:scaleX="1"
+                android:scaleY="1"
+                android:translationY="0dp" />
+            <Layout
+                android:layout_marginBottom="100dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+        </Constraint>
+        <Constraint android:id="@+id/tv_version">
+            <PropertySet android:alpha="0.5" />
+            <Transform android:translationY="0dp" />
+        </Constraint>
+    </ConstraintSet>
+
+    <Transition
+        android:id="@+id/splash_transition"
+        app:constraintSetEnd="@id/end"
+        app:constraintSetStart="@id/start"
+        app:duration="2400">
+
+        <KeyFrameSet>
+
+            <KeyAttribute
+                android:alpha="0"
+                app:framePosition="0"
+                app:motionTarget="@id/gradient_bg" />
+            <KeyAttribute
+                android:alpha="1"
+                app:framePosition="15"
+                app:motionTarget="@id/gradient_bg" />
+
+            <KeyAttribute
+                android:alpha="0"
+                app:framePosition="5"
+                app:motionTarget="@id/arc_top" />
+            <KeyAttribute
+                android:alpha="0.35"
+                app:framePosition="35"
+                app:motionTarget="@id/arc_top" />
+            <KeyAttribute
+                android:alpha="0"
+                app:framePosition="5"
+                app:motionTarget="@id/arc_bottom" />
+            <KeyAttribute
+                android:alpha="0.25"
+                app:framePosition="35"
+                app:motionTarget="@id/arc_bottom" />
+            <KeyAttribute
+                android:alpha="0"
+                android:rotation="0"
+                android:scaleX="0"
+                android:scaleY="0"
+                app:framePosition="10"
+                app:motionTarget="@id/dot1" />
+            <KeyAttribute
+                android:alpha="0.9"
+                android:rotation="45"
+                android:scaleX="1.3"
+                android:scaleY="1.3"
+                app:framePosition="22"
+                app:motionTarget="@id/dot1" />
+            <KeyAttribute
+                android:alpha="0.9"
+                android:rotation="0"
+                android:scaleX="0.8"
+                android:scaleY="0.8"
+                app:framePosition="28"
+                app:motionTarget="@id/dot1" />
+            <KeyAttribute
+                android:alpha="1.0"
+                android:rotation="30"
+                android:scaleX="1.2"
+                android:scaleY="1.2"
+                app:framePosition="40"
+                app:motionTarget="@id/dot1" />
+            <KeyAttribute
+                android:alpha="0.5"
+                android:rotation="0"
+                android:scaleX="0.6"
+                android:scaleY="0.6"
+                app:framePosition="52"
+                app:motionTarget="@id/dot1" />
+            <KeyAttribute
+                android:alpha="1.0"
+                android:rotation="20"
+                android:scaleX="1.1"
+                android:scaleY="1.1"
+                app:framePosition="64"
+                app:motionTarget="@id/dot1" />
+            <KeyAttribute
+                android:alpha="0.4"
+                android:rotation="0"
+                android:scaleX="0.7"
+                android:scaleY="0.7"
+                app:framePosition="76"
+                app:motionTarget="@id/dot1" />
+            <KeyAttribute
+                android:alpha="0.9"
+                android:rotation="15"
+                android:scaleX="1.0"
+                android:scaleY="1.0"
+                app:framePosition="88"
+                app:motionTarget="@id/dot1" />
+            <KeyAttribute
+                android:alpha="0.9"
+                android:rotation="0"
+                android:scaleX="1.0"
+                android:scaleY="1.0"
+                app:framePosition="100"
+                app:motionTarget="@id/dot1" />
+            <KeyAttribute
+                android:alpha="0"
+                android:rotation="0"
+                android:scaleX="0"
+                android:scaleY="0"
+                app:framePosition="16"
+                app:motionTarget="@id/dot2" />
+            <KeyAttribute
+                android:alpha="0.7"
+                android:rotation="-30"
+                android:scaleX="1.4"
+                android:scaleY="1.4"
+                app:framePosition="26"
+                app:motionTarget="@id/dot2" />
+            <KeyAttribute
+                android:alpha="0.3"
+                android:rotation="0"
+                android:scaleX="0.5"
+                android:scaleY="0.5"
+                app:framePosition="36"
+                app:motionTarget="@id/dot2" />
+            <KeyAttribute
+                android:alpha="0.8"
+                android:rotation="45"
+                android:scaleX="1.3"
+                android:scaleY="1.3"
+                app:framePosition="46"
+                app:motionTarget="@id/dot2" />
+            <KeyAttribute
+                android:alpha="0.2"
+                android:rotation="0"
+                android:scaleX="0.4"
+                android:scaleY="0.4"
+                app:framePosition="58"
+                app:motionTarget="@id/dot2" />
+            <KeyAttribute
+                android:alpha="0.9"
+                android:rotation="-20"
+                android:scaleX="1.2"
+                android:scaleY="1.2"
+                app:framePosition="70"
+                app:motionTarget="@id/dot2" />
+            <KeyAttribute
+                android:alpha="0.3"
+                android:rotation="0"
+                android:scaleX="0.6"
+                android:scaleY="0.6"
+                app:framePosition="82"
+                app:motionTarget="@id/dot2" />
+            <KeyAttribute
+                android:alpha="0.7"
+                android:rotation="0"
+                android:scaleX="1.0"
+                android:scaleY="1.0"
+                app:framePosition="100"
+                app:motionTarget="@id/dot2" />
+            <KeyAttribute
+                android:alpha="0"
+                android:rotation="0"
+                android:scaleX="0"
+                android:scaleY="0"
+                app:framePosition="18"
+                app:motionTarget="@id/dot3" />
+            <KeyAttribute
+                android:alpha="0.8"
+                android:rotation="60"
+                android:scaleX="1.2"
+                android:scaleY="1.2"
+                app:framePosition="30"
+                app:motionTarget="@id/dot3" />
+            <KeyAttribute
+                android:alpha="0.4"
+                android:rotation="0"
+                android:scaleX="0.7"
+                android:scaleY="0.7"
+                app:framePosition="44"
+                app:motionTarget="@id/dot3" />
+            <KeyAttribute
+                android:alpha="1.0"
+                android:rotation="45"
+                android:scaleX="1.3"
+                android:scaleY="1.3"
+                app:framePosition="60"
+                app:motionTarget="@id/dot3" />
+            <KeyAttribute
+                android:alpha="0.3"
+                android:rotation="0"
+                android:scaleX="0.5"
+                android:scaleY="0.5"
+                app:framePosition="74"
+                app:motionTarget="@id/dot3" />
+            <KeyAttribute
+                android:alpha="0.8"
+                android:rotation="30"
+                android:scaleX="1.1"
+                android:scaleY="1.1"
+                app:framePosition="86"
+                app:motionTarget="@id/dot3" />
+            <KeyAttribute
+                android:alpha="0.8"
+                android:rotation="0"
+                android:scaleX="1.0"
+                android:scaleY="1.0"
+                app:framePosition="100"
+                app:motionTarget="@id/dot3" />
+            <KeyAttribute
+                android:alpha="0"
+                android:rotation="0"
+                android:scaleX="0"
+                android:scaleY="0"
+                app:framePosition="22"
+                app:motionTarget="@id/dot4" />
+            <KeyAttribute
+                android:alpha="0.6"
+                android:rotation="-45"
+                android:scaleX="1.5"
+                android:scaleY="1.5"
+                app:framePosition="32"
+                app:motionTarget="@id/dot4" />
+            <KeyAttribute
+                android:alpha="0.1"
+                android:rotation="0"
+                android:scaleX="0.3"
+                android:scaleY="0.3"
+                app:framePosition="40"
+                app:motionTarget="@id/dot4" />
+            <KeyAttribute
+                android:alpha="0.7"
+                android:rotation="60"
+                android:scaleX="1.4"
+                android:scaleY="1.4"
+                app:framePosition="50"
+                app:motionTarget="@id/dot4" />
+            <KeyAttribute
+                android:alpha="0.1"
+                android:rotation="0"
+                android:scaleX="0.3"
+                android:scaleY="0.3"
+                app:framePosition="62"
+                app:motionTarget="@id/dot4" />
+            <KeyAttribute
+                android:alpha="0.6"
+                android:rotation="-30"
+                android:scaleX="1.2"
+                android:scaleY="1.2"
+                app:framePosition="72"
+                app:motionTarget="@id/dot4" />
+            <KeyAttribute
+                android:alpha="0.1"
+                android:rotation="0"
+                android:scaleX="0.4"
+                android:scaleY="0.4"
+                app:framePosition="84"
+                app:motionTarget="@id/dot4" />
+            <KeyAttribute
+                android:alpha="0.6"
+                android:rotation="0"
+                android:scaleX="1.0"
+                android:scaleY="1.0"
+                app:framePosition="100"
+                app:motionTarget="@id/dot4" />
+            <KeyAttribute
+                android:alpha="0"
+                android:rotation="0"
+                android:scaleX="0"
+                android:scaleY="0"
+                app:framePosition="26"
+                app:motionTarget="@id/dot5" />
+            <KeyAttribute
+                android:alpha="0.75"
+                android:rotation="30"
+                android:scaleX="1.3"
+                android:scaleY="1.3"
+                app:framePosition="36"
+                app:motionTarget="@id/dot5" />
+            <KeyAttribute
+                android:alpha="0.2"
+                android:rotation="0"
+                android:scaleX="0.5"
+                android:scaleY="0.5"
+                app:framePosition="48"
+                app:motionTarget="@id/dot5" />
+            <KeyAttribute
+                android:alpha="0.9"
+                android:rotation="50"
+                android:scaleX="1.2"
+                android:scaleY="1.2"
+                app:framePosition="62"
+                app:motionTarget="@id/dot5" />
+            <KeyAttribute
+                android:alpha="0.2"
+                android:rotation="0"
+                android:scaleX="0.5"
+                android:scaleY="0.5"
+                app:framePosition="76"
+                app:motionTarget="@id/dot5" />
+            <KeyAttribute
+                android:alpha="0.75"
+                android:rotation="20"
+                android:scaleX="1.1"
+                android:scaleY="1.1"
+                app:framePosition="90"
+                app:motionTarget="@id/dot5" />
+            <KeyAttribute
+                android:alpha="0.75"
+                android:rotation="0"
+                android:scaleX="1.0"
+                android:scaleY="1.0"
+                app:framePosition="100"
+                app:motionTarget="@id/dot5" />
+            <KeyAttribute
+                android:alpha="0"
+                android:rotation="0"
+                android:scaleX="0"
+                android:scaleY="0"
+                app:framePosition="12"
+                app:motionTarget="@id/dot6" />
+            <KeyAttribute
+                android:alpha="0.85"
+                android:rotation="-60"
+                android:scaleX="1.4"
+                android:scaleY="1.4"
+                app:framePosition="24"
+                app:motionTarget="@id/dot6" />
+            <KeyAttribute
+                android:alpha="0.3"
+                android:rotation="0"
+                android:scaleX="0.6"
+                android:scaleY="0.6"
+                app:framePosition="38"
+                app:motionTarget="@id/dot6" />
+            <KeyAttribute
+                android:alpha="1.0"
+                android:rotation="45"
+                android:scaleX="1.3"
+                android:scaleY="1.3"
+                app:framePosition="54"
+                app:motionTarget="@id/dot6" />
+            <KeyAttribute
+                android:alpha="0.2"
+                android:rotation="0"
+                android:scaleX="0.4"
+                android:scaleY="0.4"
+                app:framePosition="68"
+                app:motionTarget="@id/dot6" />
+            <KeyAttribute
+                android:alpha="0.85"
+                android:rotation="-25"
+                android:scaleX="1.2"
+                android:scaleY="1.2"
+                app:framePosition="80"
+                app:motionTarget="@id/dot6" />
+            <KeyAttribute
+                android:alpha="0.4"
+                android:rotation="0"
+                android:scaleX="0.7"
+                android:scaleY="0.7"
+                app:framePosition="94"
+                app:motionTarget="@id/dot6" />
+            <KeyAttribute
+                android:alpha="0.85"
+                android:rotation="0"
+                android:scaleX="1.0"
+                android:scaleY="1.0"
+                app:framePosition="100"
+                app:motionTarget="@id/dot6" />
+
+            <KeyAttribute
+                android:alpha="0"
+                android:scaleX="0.2"
+                android:scaleY="0.2"
+                app:framePosition="28"
+                app:motionTarget="@id/glow_ring" />
+            <KeyAttribute
+                android:alpha="0.6"
+                android:scaleX="1"
+                android:scaleY="1"
+                app:framePosition="52"
+                app:motionTarget="@id/glow_ring" />
+
+            <KeyAttribute
+                android:alpha="0"
+                android:rotation="-180"
+                android:scaleX="0"
+                android:scaleY="0"
+                app:framePosition="33"
+                app:motionTarget="@id/logo" />
+            <KeyAttribute
+                android:alpha="1"
+                android:rotation="10"
+                android:scaleX="1.18"
+                android:scaleY="1.18"
+                app:framePosition="56"
+                app:motionTarget="@id/logo" />
+            <KeyAttribute
+                android:alpha="1"
+                android:rotation="0"
+                android:scaleX="1"
+                android:scaleY="1"
+                app:framePosition="64"
+                app:motionTarget="@id/logo" />
+
+            <KeyAttribute
+                android:alpha="0"
+                android:translationY="50dp"
+                app:framePosition="62"
+                app:motionTarget="@id/tv_app_name" />
+            <KeyAttribute
+                android:alpha="1"
+                android:translationY="0dp"
+                app:framePosition="76"
+                app:motionTarget="@id/tv_app_name" />
+
+            <KeyAttribute
+                android:alpha="0"
+                android:translationY="40dp"
+                app:framePosition="68"
+                app:motionTarget="@id/tv_tagline" />
+            <KeyAttribute
+                android:alpha="1"
+                android:translationY="0dp"
+                app:framePosition="80"
+                app:motionTarget="@id/tv_tagline" />
+
+            <KeyAttribute
+                android:alpha="0"
+                android:scaleX="0"
+                app:framePosition="72"
+                app:motionTarget="@id/divider" />
+            <KeyAttribute
+                android:alpha="1"
+                android:scaleX="1"
+                app:framePosition="84"
+                app:motionTarget="@id/divider" />
+
+            <KeyAttribute
+                android:alpha="0"
+                android:scaleX="0.8"
+                android:scaleY="0.8"
+                android:translationY="80dp"
+                app:framePosition="78"
+                app:motionTarget="@id/btn_shop_now" />
+            <KeyAttribute
+                android:alpha="1"
+                android:scaleX="1"
+                android:scaleY="1"
+                android:translationY="0dp"
+                app:framePosition="92"
+                app:motionTarget="@id/btn_shop_now" />
+
+            <KeyAttribute
+                android:alpha="0"
+                android:translationY="20dp"
+                app:framePosition="85"
+                app:motionTarget="@id/tv_version" />
+            <KeyAttribute
+                android:alpha="0.5"
+                android:translationY="0dp"
+                app:framePosition="100"
+                app:motionTarget="@id/tv_version" />
+
+        </KeyFrameSet>
+    </Transition>
+
+</MotionScene>
