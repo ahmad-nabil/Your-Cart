@@ -1,6 +1,7 @@
 package com.ejabi.data.di
 
 
+import com.ejabi.data.remote.api.AuthApi
 import com.ejabi.data.remote.api.ProductApi
 import com.google.gson.GsonBuilder
 import dagger.Module
@@ -28,5 +29,10 @@ object NetworkModule {
     @Singleton
     fun provideProductApi(retrofit: Retrofit): ProductApi {
         return retrofit.create(ProductApi::class.java)
+    }
+  @Provides
+    @Singleton
+    fun provideAuthApi(retrofit: Retrofit): AuthApi {
+        return retrofit.create(AuthApi::class.java)
     }
 }

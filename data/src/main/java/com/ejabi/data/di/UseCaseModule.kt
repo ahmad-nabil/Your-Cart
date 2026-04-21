@@ -1,9 +1,11 @@
 package com.ejabi.data.di
 
+import com.ejabi.domain.repository.AuthRepository
 import com.ejabi.domain.repository.ProductRepository
 import com.ejabi.domain.usecase.Products.GetProductsByCategoryUseCase
 import com.ejabi.domain.usecase.Products.GetProductsUseCase
 import com.ejabi.domain.usecase.Products.getCategoriesUseCase
+import com.ejabi.domain.usecase.auth.LoginUseCase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -30,6 +32,11 @@ object UseCaseModule {
         repository: ProductRepository
     ): getCategoriesUseCase {
         return getCategoriesUseCase(repository)
+    }    @Provides
+    fun provideGetloginUseCase(
+        repository: AuthRepository
+    ): LoginUseCase {
+        return LoginUseCase(repository)
     }
 
 }

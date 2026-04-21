@@ -1,4 +1,4 @@
-package com.ejabi.core.datastore
+package com.ejabi.data.local.datastore
 
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
@@ -8,6 +8,7 @@ import androidx.datastore.preferences.core.stringPreferencesKey
 import com.ejabi.domain.model.AuthSession
 import com.ejabi.domain.model.User
 import kotlinx.coroutines.flow.first
+import kotlin.text.orEmpty
 
 class SessionPreferences(
     private val dataStore: DataStore<Preferences>
