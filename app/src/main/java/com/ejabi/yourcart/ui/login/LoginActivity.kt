@@ -53,20 +53,17 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun observeViewModel() {
-        // Observe login success
         viewModel.login.observe(this) { authSession ->
             authSession?.let {
                 saveSessionAndNavigate(it)
             }
         }
 
-        // Observe loading state
         viewModel.loading.observe(this) { isLoading ->
             binding.login.isEnabled = !isLoading
            if (isLoading) showProgressDialog() else dismissProgressDialog()
         }
 
-        // Observe errors
         viewModel.error.observe(this) { errorMessage ->
             errorMessage?.let {
                 Toast.makeText(this, it, Toast.LENGTH_LONG).show()

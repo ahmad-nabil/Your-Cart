@@ -1,6 +1,7 @@
 package com.ejabi.yourcart.ui.main
 
 import android.app.Dialog
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.viewModels
@@ -15,6 +16,7 @@ import com.ejabi.yourcart.adabter.ProductAdapter
 import com.ejabi.yourcart.adabter.ProductImageAdapter
 import com.ejabi.yourcart.databinding.ActivityMainBinding
 import com.ejabi.yourcart.databinding.DialogProductDetailsBinding
+import com.ejabi.yourcart.ui.AccountInfo
 import com.ejabi.yourcart.ui.main.viewmodel.MainViewModel
 import com.google.android.material.tabs.TabLayout
 import dagger.hilt.android.AndroidEntryPoint
@@ -38,7 +40,9 @@ class MainActivity : AppCompatActivity() {
         }
         setupRecycler()
         observeData()
-
+        binding.AccInfo.setOnClickListener {
+            startActivity(Intent(this, AccountInfo::class.java))
+        }
         viewModel.loadProducts()
         viewModel.loadCategory()
     }

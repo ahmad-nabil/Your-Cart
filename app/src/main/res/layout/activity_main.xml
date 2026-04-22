@@ -7,14 +7,20 @@
     android:layout_height="match_parent">
 
     <!-- 👤 Profile Icon -->
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+    <Button
+        android:id="@+id/AccInfo"
+        style="@style/Widget.Material3.Button.IconButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_margin="12dp"
+        app:icon="@drawable/profile_placeholder"
+        app:iconTint="#FFFFFF"
+        app:iconTintMode="multiply"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/outline_account_circle_24" />
+        app:srcCompat="@drawable/outline_account_circle_24"
+        app:strokeColor="#000000"
+        app:strokeWidth="1dp" />
 
     <!-- 🔥 CATEGORY TABS (MODERN) -->
     <com.google.android.material.tabs.TabLayout
@@ -25,7 +31,7 @@
         app:tabMode="scrollable"
         app:tabIndicatorFullWidth="false"
         app:tabRippleColor="@null"
-        app:layout_constraintTop_toBottomOf="@id/imageView2"
+        app:layout_constraintTop_toBottomOf="@id/AccInfo"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
