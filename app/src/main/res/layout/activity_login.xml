@@ -128,7 +128,7 @@
                         android:text="Login"
                         android:textAllCaps="false"
                         android:textSize="16sp"
-                        app:backgroundTint="#E67E22"
+                        app:background="@drawable/gradient_bg"
                         app:cornerRadius="14dp" />
 
                     <TextView
