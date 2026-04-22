@@ -1,6 +1,8 @@
 package com.ejabi.data.di
 
+import com.ejabi.data.Repository.AuthRepositoryImpl
 import com.ejabi.data.Repository.ProductRepositoryImpl
+import com.ejabi.domain.repository.AuthRepository
 import com.ejabi.domain.repository.ProductRepository
 import dagger.Binds
 import dagger.Module
@@ -15,4 +17,8 @@ abstract class RepositoryModule {
     abstract fun bindProductRepository(
         impl: ProductRepositoryImpl
     ): ProductRepository
+    @Binds
+    abstract fun bindAuthRepo(
+        impl: AuthRepositoryImpl
+    ): AuthRepository
 }

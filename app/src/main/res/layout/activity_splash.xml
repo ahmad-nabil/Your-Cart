@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.motion.widget.MotionLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/motionLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layoutDescription="@xml/scene_splash"
+    tools:context=".ui.splashActivity">
+    <View
+        android:id="@+id/gradient_bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/gradient_bg" />
+
+    <ImageView
+        android:id="@+id/arc_top"
+        android:layout_width="320dp"
+        android:layout_height="320dp"
+        android:src="@drawable/ic_circle_ring"
+        android:alpha="0"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="-80dp"
+        android:layout_marginStart="-80dp" />
+    <ImageView
+        android:id="@+id/arc_bottom"
+        android:layout_width="260dp"
+        android:layout_height="260dp"
+        android:src="@drawable/ic_circle_ring"
+        android:alpha="0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="-60dp"
+        android:layout_marginEnd="-60dp" />
+    <ImageView
+        android:id="@+id/dot1"
+        android:layout_width="22dp"
+        android:layout_height="22dp"
+        android:src="@drawable/ic_star_sparkle"
+        android:alpha="0"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="130dp"
+        android:layout_marginStart="38dp" />
+
+    <ImageView
+        android:id="@+id/dot2"
+        android:layout_width="14dp"
+        android:layout_height="14dp"
+        android:src="@drawable/ic_star_sparkle"
+        android:alpha="0"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="190dp"
+        android:layout_marginEnd="52dp" />
+
+    <ImageView
+        android:id="@+id/dot3"
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:src="@drawable/ic_star_sparkle"
+        android:alpha="0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="260dp"
+        android:layout_marginStart="65dp" />
+
+    <ImageView
+        android:id="@+id/dot4"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:src="@drawable/ic_star_sparkle"
+        android:alpha="0"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="420dp"
+        android:layout_marginEnd="28dp" />
+    <ImageView
+        android:id="@+id/dot5"
+        android:layout_width="12dp"
+        android:layout_height="12dp"
+        android:src="@drawable/ic_star_sparkle"
+        android:alpha="0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="160dp"
+        android:layout_marginStart="120dp" />
+
+    <ImageView
+        android:id="@+id/dot6"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:src="@drawable/ic_star_sparkle"
+        android:alpha="0"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="90dp" />
+
+    <!-- glow ring behind logo -->
+    <View
+        android:id="@+id/glow_ring"
+        android:layout_width="220dp"
+        android:layout_height="220dp"
+        android:background="@drawable/glow_ring"
+        android:alpha="0"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="80dp" />
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        app:srcCompat="@drawable/yourcart"
+        android:alpha="0"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="80dp" />
+
+    <TextView
+        android:id="@+id/tv_app_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="YourCart"
+        android:fontFamily="@font/poppins_semibold"
+        android:textSize="36sp"
+        android:textColor="#FFFFFF"
+        android:letterSpacing="0.08"
+        android:alpha="0"
+        app:layout_constraintTop_toBottomOf="@id/logo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp" />
+
+    <TextView
+        android:id="@+id/tv_tagline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Shop smarter. Live better."
+        android:fontFamily="@font/poppins_semibold"
+        android:textSize="13sp"
+        android:textColor="#B0C4FF"
+        android:alpha="0"
+        app:layout_constraintTop_toBottomOf="@id/tv_app_name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="4dp" />
+    <View
+        android:id="@+id/divider"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:background="@drawable/gradient_divider"
+        android:alpha="0"
+        app:layout_constraintTop_toBottomOf="@id/tv_tagline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginEnd="48dp" />
+
+    <Button
+        android:id="@+id/btn_shop_now"
+        android:layout_width="220dp"
+        android:layout_height="56dp"
+        android:text="START SHOPPING"
+        android:fontFamily="@font/poppins_semibold"
+        android:textSize="13sp"
+        android:textColor="#1A1A2E"
+        android:letterSpacing="0.1"
+        android:background="@drawable/btn_primary"
+        android:alpha="0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="100dp" />
+
+    <TextView
+        android:id="@+id/tv_version"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="v1.0.0"
+        android:textSize="11sp"
+        android:textColor="#4A5080"
+        android:fontFamily="@font/poppins_semibold"
+        android:alpha="0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="32dp" />
+
+</androidx.constraintlayout.motion.widget.MotionLayout>
