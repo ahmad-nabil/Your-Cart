@@ -18,6 +18,9 @@
         android:theme="@style/Theme.YourCart"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".ui.CartActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.OrdersActivity"
             android:exported="false" />
         <activity

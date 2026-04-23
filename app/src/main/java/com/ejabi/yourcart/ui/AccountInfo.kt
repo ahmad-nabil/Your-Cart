@@ -2,13 +2,15 @@ package com.ejabi.yourcart.ui
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.PopupMenu
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import com.bumptech.glide.Glide
 import com.ejabi.data.local.datastore.SessionPreferences
-import com.ejabi.yourcart.ui.OrdersActivity
+import com.ejabi.yourcart.R
 import com.ejabi.yourcart.databinding.ActivityAccountInfoBinding
 import com.ejabi.yourcart.ui.login.LoginActivity
+import com.ejabi.yourcart.ui.main.MainActivity
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -23,7 +25,6 @@ class AccountInfo : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         binding = ActivityAccountInfoBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -31,55 +32,87 @@ class AccountInfo : AppCompatActivity() {
         setupClicks()
     }
 
+    private fun setupClicks() = with(binding) {
+        btnMenu.setOnClickListener { showPopupMenu() }
+
+        cardOrders.setOnClickListener {
+            navigateTo(OrdersActivity::class.java)
+        }
+
+        cardLogout.setOnClickListener {
+            logout()
+        }
+    }
+
+    private fun showPopupMenu() {
+        PopupMenu(this, binding.btnMenu).apply {
+            menuInflater.inflate(R.menu.profile_menu, menu)
+
+            setOnMenuItemClickListener { item ->
+                when (item.itemId) {
+                    R.id.menu_cart -> {
+                        navigateTo(CartActivity::class.java)
+                        true
+                    }
+
+                    R.id.menu_orders -> {
+                        navigateTo(OrdersActivity::class.java)
+                        true
+                    }
+
+                    R.id.menu_home -> {
+                        navigateTo(MainActivity::class.java, clearStack = true)
+                        true
+                    }
+
+                    R.id.menu_logout -> {
+                        logout()
+                        true
+                    }
+
+                    else -> false
+                }
+            }
+        }.show()
+    }
+
     private fun loadUserData() {
         lifecycleScope.launch {
-            val session = sessionPreferences.getSession()
-
-            session?.let { auth ->
-
+            sessionPreferences.getSession()?.let { auth ->
                 val user = auth.user
+                val fullName = "${user.firstName} ${user.lastName}"
 
-                binding.tvUserName.text =
-                    "${user.firstName} ${user.lastName}"
+                with(binding) {
+                    tvUserName.text = fullName
+                    tvUserEmail.text = user.email
+                    tvNameValue.text = fullName
+                    tvEmailValue.text = user.email
+                    tvPhoneValue.text = user.username
 
-                binding.tvUserEmail.text = user.email
-                binding.tvNameValue.text =
-                    "${user.firstName} ${user.lastName}"
-                binding.tvEmailValue.text = user.email
-
-                binding.tvPhoneValue.text = user.username // (if no phone)
-
-                // image
-                user.image?.let { imageUrl ->
-                    if (imageUrl.isNotEmpty()) {
+                    if (!user.image.isNullOrBlank()) {
                         Glide.with(this@AccountInfo)
-                            .load(imageUrl)
-                            .into(binding.ivProfile)
+                            .load(user.image)
+                            .placeholder(R.drawable.profile_placeholder)
+                            .error(R.drawable.profile_placeholder)
+                            .into(ivProfile)
                     }
                 }
             }
         }
     }
 
-    private fun setupClicks() {
-
-        binding.cardOrders.setOnClickListener {
-            startActivity(Intent(this, OrdersActivity::class.java))
+    private fun logout() {
+        lifecycleScope.launch {
+            sessionPreferences.clear()
+            navigateTo(LoginActivity::class.java, clearStack = true)
         }
+    }
 
-        binding.cardLogout.setOnClickListener {
-            lifecycleScope.launch {
-                sessionPreferences.clear()
-
-                startActivity(
-                    Intent(this@AccountInfo, LoginActivity::class.java)
-                )
-                finishAffinity()
-            }
+    private fun navigateTo(destination: Class<*>, clearStack: Boolean = false) {
+        val intent = Intent(this, destination)
+        if (clearStack) {
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
         }
-
-        binding.btnMenu.setOnClickListener {
-            onBackPressedDispatcher.onBackPressed()
-        }
+        startActivity(intent)
     }
 }
